@@ -1,10 +1,11 @@
 <script>
 import firebase from 'firebase';
+import { VueTyper } from 'vue-typer'
 
 export default {
   name: 'Home',
   components: {
-
+    VueTyper
   },
   data() {
     return {
@@ -20,7 +21,7 @@ export default {
         navigation: true,
         fadingEffect: true,
         navigationPosition: 'left',
-        navigationTooltips: ['Home','Section 2', 'Section 3', 'Section 4','Section 5','Section 6'],
+        navigationTooltips: ['','Section 2', 'Section 3', 'Section 4','Section 5','Section 6'],
         showActiveTooltip: true,
         easingcss3: 'cubic-bezier(0.65, 0, 0.35, 1)', //swoopy
         anchors: ['home','section2', 'section3', 'section4','section5','section6'],
@@ -72,6 +73,12 @@ export default {
       this.activeSection = destination.index;
 
       console.log('activeSection: ', this.activeSection);
+
+      if(this.activeSection >= 1) {
+        document.getElementById('fp-nav').style.opacity = 1;
+      } else {
+        document.getElementById('fp-nav').style.opacity = 0;
+      }
 
       if(direction == 'up') {
         this.triggerUp = true;
@@ -156,16 +163,8 @@ export default {
       <canvas id="glscreen"></canvas>
     </div>
 
-    <!-- social media buttons -->
-    <!--div class="soc-container">
-      <a href="#" target="_blank"><div class="hoverable soc-button fb"></div></a>
-      <a href="#" target="_blank"><div class="hoverable soc-button insta"></div></a>
-      <a href="#" target="_blank"><div class="hoverable soc-button tw"></div></a>
-      <a href="#" target="_blank"><div class="hoverable soc-button li"></div></a>
-    </div-->
-
     <div class="menu">
-      <div class="fp-menu -open">
+      <div class="fp-menu">
         <a class="fp-menu-logo" href="/" aria-label="Ferrumpipe">
             <svg class="fp-svgsprite -logo">
                 <use xlink:href="#logo"></use>
@@ -175,32 +174,41 @@ export default {
             </svg>
         </a>
         <div class="fp-menu-toggle">
-            <button class="non-hoverable fp-btn fp-btn_toggle -active" aria-label="menu" data-magnetic="" style="transform: translate3d(0px, 0px, 0px);"><span></span><span></span></button>
+            <button class="non-hoverable fp-btn fp-btn_toggle" aria-label="menu" data-magnetic="" style="transform: translate3d(0px, 0px, 0px);"><span></span><span></span></button>
         </div>
         <div class="fp-menu-box">
             <ul class="fp-menu-list">
                 <li class="fp-menu-list-item">
-                    <a class="fp-menu-link" href="/docs/price.pdf" target="_blank" data-magnetic="">
+                    <router-link to="/#work" class="fp-menu-link" target="_blank" data-magnetic="">
                         <span class="fp-menu-link-text"><span data-text="Work">Work</span></span>
-                    </a>
+                    </router-link>
                 </li>
                 <li class="fp-menu-list-item">
-                    <a class="fp-menu-link" href="/fencing/" data-magnetic="">
+                    <router-link to="/about" class="fp-menu-link" data-magnetic="">
                         <span class="fp-menu-link-text"><span data-text="About">About</span></span>
-                    </a>
+                    </router-link>
                 </li>
                 <li class="fp-menu-list-item">
-                    <a class="fp-menu-link" href="/gates/" data-magnetic="">
+                    <router-link to="/services" class="fp-menu-link" data-magnetic="">
                         <span class="fp-menu-link-text"><span data-text="Services">Services</span></span>
-                    </a>
+                    </router-link>
                 </li>
                 <li class="fp-menu-list-item">
-                    <a class="fp-menu-link -active" href="/security/" data-magnetic="">
+                    <router-link to="/contact" class="fp-menu-link -active" data-magnetic="">
                         <span class="fp-menu-link-text"><span data-text="Contact">Contact</span></span>
-                    </a>
+                    </router-link>
                 </li>
             </ul>
-            <div class="fp-menu-contacts"><a class="fp-menu-email" href="mailto:">sayhello@ltdesign.io</a><a class="fp-menu-phone" href="tel:">+314 328 8216</a></div>
+            <div class="fp-menu-contacts">
+              <a class="fp-menu-email" href="mailto:">sayhello@ltdesign.io</a>
+              <a class="fp-menu-phone" href="tel:">+314 328 8216</a>
+              <div class="soc-container">
+                <a href="#" target="_blank"><div class="hoverable soc-button fb"></div></a>
+                <a href="#" target="_blank"><div class="hoverable soc-button insta"></div></a>
+                <a href="https://twitter.com/LTDesignLab" target="_blank"><div class="hoverable soc-button tw"></div></a>
+                <a href="#" target="_blank"><div class="hoverable soc-button li"></div></a>
+              </div>  
+            </div>
         </div>
       </div>
     </div>
@@ -223,8 +231,7 @@ export default {
       <!-- Section 1 (landing page) -->
       <section class="section landing">
         <div class="landing-container">
-
-
+          <div style="font-size: 36px" class="type-container">We Develop<vue-typer id="vue-typer" :text="[' Websites',' Apps',' Branding',' UX']"></vue-typer></div>
         </div>
       </section>
       
@@ -284,28 +291,29 @@ export default {
 
 .hero-container {
   //background: red;
-  width: 100%;
-  height: 100vh;
+  width: 1200px;
+  height: 600px;
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
 
   .hero-item {
-    height: 150px;
-    margin-left: 48px;
-    margin-right: 48px;
+    margin-bottom: 64px;
+    height: 80px;
+    width: 100%;
+    margin-left: 18px;
+    margin-right: 18px;
     transition: 300ms;
     background-size: contain;
     background-position: center;
     background-repeat: no-repeat;
     opacity: 0;
-    transform: rotateX(-70deg) translateX(24px);
+    transform: scale(1) rotateX(0deg) translateX(-120px);
   }
 
   .hero-item1 {
     background-image: url('../assets/hero1.svg');
-    width: 664px;
-    animation: hero-swoop 800ms ease forwards 4.5s;
+    animation: hero-swoop 800ms ease forwards 4.2s;
 
     &:hover {
       background-image: url('../assets/hero1-hover.svg');
@@ -314,8 +322,7 @@ export default {
 
   .hero-item2 {
     background-image: url('../assets/hero2.svg');
-    width: 359px;
-    animation: hero-swoop 800ms ease forwards 4.6s;
+    animation: hero-swoop 800ms ease forwards 4.3s;
 
     &:hover {
       background-image: url('../assets/hero2-hover.svg');
@@ -324,8 +331,7 @@ export default {
 
   .hero-item3 {
     background-image: url('../assets/hero3.svg');
-    width: 633px;
-    animation: hero-swoop 800ms ease forwards 4.7s;
+    animation: hero-swoop 800ms ease forwards 4.4s;
 
     &:hover {
       background-image: url('../assets/hero3-hover.svg');
@@ -336,7 +342,7 @@ export default {
 @keyframes hero-swoop {
   to {
     opacity: 1;
-    transform: scale(1) rotateX(0deg) translateX(0px);
+    transform: translateX(0px);
   }
 }
 
@@ -451,11 +457,9 @@ export default {
 }
 
 .soc-container {
-  position: fixed;
-  top: $pad;
-  right: $pad;
-  margin: auto;
-  display: flex;
+  margin-top: 80px;
+  bottom: 64px;
+  display: flex !important;
   justify-content: center;
   align-items: center;
   z-index: 9999;
@@ -1470,13 +1474,13 @@ p {
 }
 .fp-menu-box {
     width: 100vw;
-    padding: 115px 30px 40px;
+    padding: 115px 0px 40px;
     position: fixed;
     top: 0;
     bottom: 0;
     right: 0;
     z-index: 2;
-    background: #212121;
+    background: #111111;
     overflow: auto;
     -webkit-transform: translateX(100%);
     -moz-transform: translateX(100%);
@@ -1493,7 +1497,7 @@ p {
 }
 @media (min-width: 1024px) {
     .fp-menu-box {
-        width: 294px;
+        width: 394px;
         padding: 80px 100px 50px 160px;
         -webkit-transition: -webkit-transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
         transition: -webkit-transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
@@ -1522,6 +1526,7 @@ p {
         -moz-box-pack: center;
         -ms-flex-pack: center;
         justify-content: center;
+        padding-right: 0px !important;
     }
 }
 .fp-menu.-open .fp-menu-box {
@@ -3516,6 +3521,11 @@ p {
 
 
 @media only screen and (max-width: 900px) {
-
+  .soc-button {
+    margin-left: 18px !important;
+    margin-right: 18px !important;
+    width: 32px !important;
+    height: 32px !important;
+  }
 }
 </style>

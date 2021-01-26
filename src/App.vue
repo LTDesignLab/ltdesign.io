@@ -222,6 +222,20 @@ p {
   color: white;
   background: black; 
 }
+
+.vue-typer .custom.char.typed {
+  color: white;
+}
+
+.vue-typer {
+  font-size: 36px;
+}
+
+.vue-typer .custom.caret {
+  width: 10px;
+  background-color: #467793;
+}
+
 // --------- cursor stuff ----------
 
 .g-cursor {
@@ -316,7 +330,7 @@ p {
     display: none !important;
   }
   .swoop {
-      transform: translate(-56px, -62px) scale(0.2) !important;
+      transform: translate(-50px, -55px) scale(0.15) !important;
       //background: green !important;
       transition: 1s cubic-bezier(0.65, 0, 0.35, 1);
    }
