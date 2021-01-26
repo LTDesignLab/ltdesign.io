@@ -1,6 +1,6 @@
 <script>
 import firebase from 'firebase';
-import { VueTyper } from 'vue-typer'
+import { VueTyper } from 'vue-typer';
 
 export default {
   name: 'Home',
@@ -231,12 +231,22 @@ export default {
       <!-- Section 1 (landing page) -->
       <section class="section landing">
         <div class="landing-container">
-          <div style="font-size: 36px" class="type-container">We Develop<vue-typer id="vue-typer" :text="[' Websites',' Apps',' Branding',' UX']"></vue-typer></div>
+          <div class="landing-inner">
+            <div style="font-size: 36px" class="type-container">We Develop<vue-typer id="vue-typer" :text="[' Websites', ' Apps',' Brands',' UX']"></vue-typer></div>
+            <div @click="goDown" id="container">
+              <button class="learn-more">
+                <span class="circle" aria-hidden="true">
+                  <span class="icon arrow"></span>
+                </span>
+                <span class="button-text">View Work</span>
+              </button>
+            </div>
+          </div>
         </div>
       </section>
       
       <!-- Section 2 -->
-      <section style="background: #4C4C4C" class="section">
+      <section class="section">
         <div class="page-container">
         </div>
       </section>
@@ -288,6 +298,30 @@ export default {
 
 <style lang="scss" scoped>
 @import '../assets/styles/global';
+
+.landing-inner {
+  width: 100vw;
+  padding-left: 420px;
+}
+
+.type-container {
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.slide-inner {
+  background: blue;
+  width: 100%;
+  height: 30vh;
+}
+
+.gallery-container {
+  position: absolute;
+  bottom: 0px;
+  height: 40vh;
+  width: 100%;
+}
 
 .hero-container {
   //background: red;
@@ -467,9 +501,8 @@ export default {
 }
 
 .landing-container {
-  width: 100%;
-  height: 100vh;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   margin: auto;
@@ -478,7 +511,7 @@ export default {
   left: 0px;
   right: 0px;
   bottom: 0px;
-  top: 0px;
+  top: -60px;
 
   h1 {
     font-size: 48px;
@@ -3526,6 +3559,115 @@ p {
     margin-right: 18px !important;
     width: 32px !important;
     height: 32px !important;
+  }
+}
+
+@import url('https://fonts.googleapis.com/css?family=Mukta:700');
+
+$bg: #f3f8fa;
+$white: black;
+$black: white;
+
+@mixin transition($property: all, $duration: 0.45s, $ease: cubic-bezier(0.65,0,.076,1)) {
+  transition: $property $duration $ease;
+}
+
+.learn-more {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+    outline: none;
+    border: 0;
+    vertical-align: middle;
+    text-decoration: none;
+    background: transparent;
+    padding: 0;
+    font-size: inherit;
+    font-family: inherit;
+    width: 12rem;
+    height: auto;
+    .circle {
+      @include transition(all, 0.45s, cubic-bezier(0.65,0,.076,1));
+      position: relative;
+      display: block;
+      margin: 0;
+      width: 3rem;
+      height: 3rem;
+      background: white;
+      border-radius: 1.625rem;
+      .icon {
+        @include transition(all, 0.45s, cubic-bezier(0.65,0,.076,1));
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        margin: auto;
+        transform: rotate(90deg);
+        background: black;
+        &.arrow {
+          @include transition(all, 0.45s, cubic-bezier(0.65,0,.076,1));
+          left: 0.625rem;
+          width: 1.125rem;
+          height: 0.125rem;
+          transform: translate(5px, -4px) rotate(90deg);
+          background: none;
+          &::before {
+            position: absolute;
+            content: '';
+            top: -0.25rem;
+            right: 0.0625rem;
+            width: 0.625rem;
+            height: 0.625rem;
+            border-top: 0.125rem solid black;
+            border-right: 0.125rem solid black;
+            transform: rotate(45deg);
+          }
+        }
+      }
+    }
+    .button-text {
+      @include transition(all, 0.45s, cubic-bezier(0.65,0,.076,1));
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      padding: 0.75rem 0;
+      margin: 0 0 0 1.85rem;
+      color: rgba(white, 0.3);
+      font-weight: 700;
+      line-height: 1.6;
+      text-align: center;
+      text-transform: uppercase;
+    }
+  &:hover {
+    .circle {
+      width: 100%;
+      .icon {
+        &.arrow {
+        background: $white;
+        transform: translate(5px, 2px) rotate(90deg);
+        }
+      }
+    }
+    .button-text {
+      color: $white;
+    }
+  }
+}
+
+@supports (display: grid) {
+  body {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 0.625rem;
+    grid-template-areas: ". main main ." ". main main .";
+  }
+  
+  #container {
+    grid-area: main;
+    align-self: center;
+    width: max-content;
+    margin-top: 48px;
   }
 }
 </style>
