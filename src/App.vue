@@ -93,7 +93,7 @@ html {
   transition: filter 1s;
 }
 .swoop {
-  transform: translate(-22px, -22px) scale(0.3) !important;
+  transform: translate(-22px, -22px) scale(0.2) !important;
   //background: green !important;
   transition: 1s cubic-bezier(0.65, 0, 0.35, 1);
 }

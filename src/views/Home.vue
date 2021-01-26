@@ -175,7 +175,7 @@ export default {
             </svg>
         </a>
         <div class="fp-menu-toggle">
-            <button class="fp-btn fp-btn_toggle -active" aria-label="menu" data-magnetic="" style="transform: translate3d(0px, 0px, 0px);"><span></span><span></span></button>
+            <button class="non-hoverable fp-btn fp-btn_toggle -active" aria-label="menu" data-magnetic="" style="transform: translate3d(0px, 0px, 0px);"><span></span><span></span></button>
         </div>
         <div class="fp-menu-box">
             <ul class="fp-menu-list">
@@ -955,26 +955,6 @@ menu {
 [hidden] {
     display: none;
 }
-body {
-    margin: 0;
-    padding: 0;
-    height: 100%;
-    background: #fff;
-    color: #204b45;
-    font-family: "Averta CY", sans-serif;
-    font-weight: 600;
-    font-size: 16px;
-    letter-spacing: normal;
-    line-height: normal;
-    text-align: left;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-}
-* {
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
-}
 :after,
 :before {
     -webkit-box-sizing: border-box;
@@ -1083,7 +1063,7 @@ p {
     cursor: -webkit-grab;
     cursor: -moz-grab;
     cursor: grab;
-    background: #204b45;
+    background: white;
 }
 .fp-layout .scroll-content {
     height: 100%;
@@ -1198,7 +1178,7 @@ p {
 }
 .fp-h1 {
     margin: 0;
-    color: #204b45;
+    color: white;
     font-weight: 600;
     font-size: 30px;
     line-height: 1;
@@ -1228,7 +1208,7 @@ p {
 .fp-fence-title,
 .fp-h2 {
     margin: 0;
-    color: #204b45;
+    color: white;
     font-weight: 600;
     font-size: 30px;
     line-height: 1;
@@ -1255,7 +1235,7 @@ p {
 }
 .fp-h3 {
     margin: 0;
-    color: #204b45;
+    color: white;
     font-weight: 600;
     font-size: 21px;
     line-height: 27px;
@@ -1496,7 +1476,7 @@ p {
     bottom: 0;
     right: 0;
     z-index: 2;
-    background: #fff;
+    background: #212121;
     overflow: auto;
     -webkit-transform: translateX(100%);
     -moz-transform: translateX(100%);
@@ -1513,7 +1493,7 @@ p {
 }
 @media (min-width: 1024px) {
     .fp-menu-box {
-        width: 694px;
+        width: 294px;
         padding: 80px 100px 50px 160px;
         -webkit-transition: -webkit-transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
         transition: -webkit-transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
@@ -1588,7 +1568,7 @@ p {
 .fp-menu-link {
     display: inline-block;
     position: relative;
-    color: #204b45;
+    color: white;
     font-size: 30px;
     letter-spacing: -0.03em;
     text-decoration: none;
@@ -1679,7 +1659,7 @@ p {
     right: 0;
     bottom: -6px;
     height: 2px;
-    background: #204b45;
+    background: white;
     opacity: 0.2;
 }
 @media (min-width: 1600px) {
@@ -1723,7 +1703,7 @@ p {
     padding-bottom: 4px;
     margin-bottom: 10px;
     position: relative;
-    color: #e95e2a;
+    color: #467793;
     font-size: 16px;
     font-weight: 700;
     line-height: 20px;
@@ -1745,7 +1725,7 @@ p {
     right: 0;
     bottom: 0;
     height: 1px;
-    background: #e95e2a;
+    background: #467793;
 }
 .fp-menu-email::before {
     -webkit-transform-origin: left;
@@ -1772,7 +1752,7 @@ p {
     transform: scaleX(1);
 }
 .fp-menu-email:hover {
-    color: #e95e2a;
+    color: #467793;
 }
 .fp-menu-email:hover::before {
     -webkit-transform: scaleX(1);
@@ -1806,7 +1786,7 @@ p {
 }
 .fp-menu-phone {
     position: relative;
-    color: #204b45;
+    color: white;
     text-decoration: none;
     font-size: 16px;
     line-height: 21px;
@@ -1846,7 +1826,7 @@ p {
 }
 .fp-menu-phone:focus,
 .fp-menu-phone:hover {
-    color: #204b45;
+    color: white;
     text-decoration: none;
 }
 .fp-menu-phone:hover:before {
@@ -1963,7 +1943,7 @@ p {
     justify-content: center;
     padding: 0 22px;
     height: 54px;
-    color: #e95e2a;
+    color: #467793;
     background: rgba(233, 94, 42, 0.2);
     font-size: 16px;
     line-height: 20px;
@@ -2017,7 +1997,7 @@ p {
     transition: transform 0.9s cubic-bezier(0.19, 1, 0.22, 1), -webkit-transform 0.9s cubic-bezier(0.19, 1, 0.22, 1), -moz-transform 0.9s cubic-bezier(0.19, 1, 0.22, 1), -o-transform 0.9s cubic-bezier(0.19, 1, 0.22, 1);
 }
 .fp-btn_rounded:hover {
-    background: #e95e2a;
+    background: #467793;
     color: #fff;
 }
 .fp-btn_rounded:hover .fp-btn_rounded-text span {
@@ -2035,7 +2015,7 @@ p {
     transform: skewY(10deg);
 }
 .fp-btn_rounded.-dark {
-    background: #204b45;
+    background: white;
     color: #fff;
 }
 .fp-btn_link {
@@ -2043,7 +2023,7 @@ p {
     font-size: 14px;
     line-height: 17px;
     letter-spacing: -0.03em;
-    color: #e95e2a;
+    color: #467793;
     position: relative;
     display: inline-block;
     padding-bottom: 5px;
@@ -2063,7 +2043,7 @@ p {
     right: 0;
     bottom: 0;
     height: 1px;
-    background: #e95e2a;
+    background: #467793;
 }
 .fp-btn_link::before {
     -webkit-transform-origin: left;
@@ -2102,7 +2082,7 @@ p {
     transition: transform 1.2s cubic-bezier(0.19, 1, 0.22, 1) 0.2s, -webkit-transform 1.2s cubic-bezier(0.19, 1, 0.22, 1) 0.2s, -moz-transform 1.2s cubic-bezier(0.19, 1, 0.22, 1) 0.2s, -o-transform 1.2s cubic-bezier(0.19, 1, 0.22, 1) 0.2s;
 }
 .fp-btn_link:hover {
-    color: #e95e2a;
+    color: #467793;
 }
 .fp-btn_link:hover::before {
     -webkit-transform: scaleX(1);
@@ -2144,7 +2124,7 @@ p {
     margin: 6px 0;
     position: relative;
     top: 0;
-    background: #204b45;
+    background: white;
     -webkit-transition: top 0.2s 0.3s, opacity 0.3s 0.1s, background 0.4s, -webkit-transform 0.3s 0s;
     transition: top 0.2s 0.3s, opacity 0.3s 0.1s, background 0.4s, -webkit-transform 0.3s 0s;
     -o-transition: top 0.2s 0.3s, opacity 0.3s 0.1s, background 0.4s, -o-transform 0.3s 0s;
@@ -2162,7 +2142,7 @@ p {
     -webkit-border-radius: 50%;
     -moz-border-radius: 50%;
     border-radius: 50%;
-    background: #37c89a;
+    background: #467793;
     opacity: 0;
     -webkit-transform: scale(0.5);
     -moz-transform: scale(0.5);
@@ -2322,7 +2302,7 @@ p {
     }
 }
 .fp-use-text span {
-    color: #204b45;
+    color: white;
 }
 .fp-use-text div {
     will-change: transform;
@@ -2459,7 +2439,7 @@ p {
 .fp-fence-text {
     max-width: 272px;
     margin-left: 30px;
-    color: #204b45;
+    color: white;
     font-size: 16px;
     line-height: 21px;
     letter-spacing: -0.02em;
@@ -2647,7 +2627,7 @@ p {
     display: block;
     height: 1px;
     margin: 0 auto 69px;
-    background: #204b45;
+    background: white;
     opacity: 0.2;
 }
 @media (min-width: 1024px) {
@@ -2662,7 +2642,7 @@ p {
 }
 .fp-footer-text {
     max-width: 362px;
-    color: #204b45;
+    color: white;
     font-size: 18px;
     line-height: 23px;
     letter-spacing: -0.03em;
@@ -2684,7 +2664,7 @@ p {
 }
 .fp-footer-text a {
     position: relative;
-    color: #204b45;
+    color: white;
     text-decoration: none;
 }
 .fp-footer-text a::after,
@@ -2695,7 +2675,7 @@ p {
     right: 0;
     bottom: -2px;
     height: 1px;
-    background: #204b45;
+    background: white;
 }
 .fp-footer-text a::before {
     -webkit-transform-origin: left;
@@ -2722,7 +2702,7 @@ p {
     transform: scaleX(1);
 }
 .fp-footer-text a:hover {
-    color: #204b45;
+    color: white;
 }
 .fp-footer-text a:hover::before {
     -webkit-transform: scaleX(1);
@@ -2802,7 +2782,7 @@ p {
 }
 .fp-footer-email {
     position: relative;
-    color: #e95e2a;
+    color: #467793;
     text-decoration: none;
     font-size: 26px;
     line-height: 33px;
@@ -2822,7 +2802,7 @@ p {
     right: 0;
     bottom: 0;
     height: 1px;
-    background: #e95e2a;
+    background: #467793;
 }
 .fp-footer-email::before {
     -webkit-transform-origin: left;
@@ -2849,7 +2829,7 @@ p {
     transform: scaleX(1);
 }
 .fp-footer-email:hover {
-    color: #e95e2a;
+    color: #467793;
 }
 .fp-footer-email:hover::before {
     -webkit-transform: scaleX(1);
@@ -2883,7 +2863,7 @@ p {
 }
 .fp-footer-phone {
     position: relative;
-    color: #204b45;
+    color: white;
     text-decoration: none;
     font-size: 26px;
     line-height: 33px;
@@ -2923,7 +2903,7 @@ p {
 }
 .fp-footer-phone:focus,
 .fp-footer-phone:hover {
-    color: #204b45;
+    color: white;
     text-decoration: none;
 }
 .fp-footer-phone:hover:before {
@@ -3127,7 +3107,7 @@ p {
 .fp-header-title {
     max-width: 274px;
     margin: 0 auto;
-    color: #204b45;
+    color: white;
     font-weight: 600;
     font-size: 30px;
     line-height: 1;
@@ -3166,7 +3146,7 @@ p {
 .fp-range-title {
     max-width: 280px;
     margin: 0 auto 50px;
-    color: #204b45;
+    color: white;
     font-weight: 600;
     font-size: 30px;
     line-height: 1;
@@ -3190,7 +3170,7 @@ p {
 .fp-range-text {
     max-width: 400px;
     margin: 0 auto 50px;
-    color: #204b45;
+    color: white;
     font-size: 16px;
     line-height: 21px;
     text-align: center;
@@ -3275,7 +3255,7 @@ p {
 .fp-range-item-title {
     max-width: 210px;
     margin: 0 auto;
-    color: #204b45;
+    color: white;
     font-size: 16px;
     line-height: 19px;
     text-align: center;
@@ -3304,7 +3284,7 @@ p {
 .fp-image-title {
     max-width: 280px;
     margin: 0 auto 50px;
-    color: #204b45;
+    color: white;
     font-weight: 600;
     font-size: 30px;
     line-height: 1;
@@ -3346,7 +3326,7 @@ p {
 .fp-image-text {
     max-width: 320px;
     margin: 0 auto;
-    color: #204b45;
+    color: white;
     font-size: 16px;
     line-height: 21px;
     letter-spacing: -0.03em;
@@ -3416,7 +3396,7 @@ p {
 }
 .fp-why-title {
     margin: 0 0 70px;
-    color: #204b45;
+    color: white;
     font-weight: 600;
     font-size: 30px;
     line-height: 1;
@@ -3512,7 +3492,7 @@ p {
 .fp-why-item-text {
     max-width: 275px;
     margin-bottom: 9px;
-    color: #204b45;
+    color: white;
     font-size: 16px;
     line-height: 1;
     letter-spacing: -0.01em;
@@ -3528,6 +3508,10 @@ p {
     .fp-why-item-text {
         max-width: 241px;
     }
+}
+
+.fp-menu-toggle {
+  mix-blend-mode: difference;
 }
 
 
